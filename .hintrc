@@ -16,6 +16,7 @@
       {
         "list": "off"
       }
-    ]
+    ],
+    "axe/parsing": "off"
   }
 }
