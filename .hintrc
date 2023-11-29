@@ -17,6 +17,7 @@
         "list": "off"
       }
     ],
-    "axe/parsing": "off"
+    "axe/parsing": "off",
+    "compat-api/css": "off"
   }
 }
