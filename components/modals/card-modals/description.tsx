@@ -43,10 +43,6 @@ export const Description = ({ data }: DescriptionProps) => {
     if (e.key === "Escape") {
       disableEditing();
     }
-
-    if (e.key === "Enter" || e.shiftKey) {
-      formRef.current?.requestSubmit();
-    }
   };
 
   useEventListener("keydown", onKeyDown);
@@ -56,6 +52,9 @@ export const Description = ({ data }: DescriptionProps) => {
     onSuccess: (data) => {
       queryClient.invalidateQueries({
         queryKey: ["card", data.id],
+      });
+      queryClient.invalidateQueries({
+        queryKey: ["card-logs", data.id],
       });
       toast.success(`Card ${data.title} description added successfully.`);
       disableEditing();
@@ -76,10 +75,7 @@ export const Description = ({ data }: DescriptionProps) => {
     <div className="flex items-start gap-x-3 w-full">
       <AlignLeft className="h-5 w-5 mt-0.5 text-neutral-700" />
       <div className="w-full">
-        <p className="font-semibold text-neutral-700 mb-2">
-          Description
-          <span className="font-normal text-xs ml-2">(Shift + Enter to save)</span>        
-        </p>
+        <p className="font-semibold text-neutral-700 mb-2">Description</p>
         {isEditing ? (
           <form action={onSubmit} ref={formRef} className="space-y-2">
             <FormTextarea
