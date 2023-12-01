@@ -1,22 +1,25 @@
 "use client";
 
+import { ElementRef, useRef } from "react";
+import { useRouter } from "next/navigation";
+import { X } from "lucide-react";
+import { toast } from "sonner";
+
 import {
   Popover,
   PopoverClose,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { useAction } from "@/hooks/use-action";
-import { ElementRef, useRef } from "react";
-import { CreateBoard } from "@/actions/create-board/schema";
-import { FormInput } from "./form-input";
-import { FormSubmit } from "./form-submit";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
+
+import { useAction } from "@/hooks/use-action";
+import { useProModal } from "@/hooks/use-pro-modal";
 import { createBoard } from "@/actions/create-board";
-import { toast } from "sonner";
+
 import { FormPicker } from "./form-picker";
-import { useRouter } from "next/navigation";
+import { FormSubmit } from "./form-submit";
+import { FormInput } from "./form-input";
 
 interface FormPopoverProps {
   children: React.ReactNode;
@@ -32,6 +35,7 @@ export const FormPopover = ({
   sideOffset = 0,
 }: FormPopoverProps) => {
   const router = useRouter();
+  const proModel = useProModal();
   const closeRef = useRef<ElementRef<"button">>(null);
   const { execute, fieldErrors } = useAction(createBoard, {
     onSuccess: (data) => {
@@ -41,15 +45,14 @@ export const FormPopover = ({
     },
     onError: (error) => {
       toast.error(error);
+      proModel.onOpen();
     },
   });
 
   const onFormSubmit = (formData: FormData) => {
     const title = formData.get("title") as string;
     const image = formData.get("image") as string;
-
-    // console.log({ title, image });
-
+    
     execute({ title, image });
   };
   return (
