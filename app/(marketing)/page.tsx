@@ -29,7 +29,7 @@ const MarketingPage = () => {
           no 1 task managment app
         </div>
         <h1 className="text-3xl md:text-6xl text-center text-neutral-800 mb-6">
-          Trello helps team move
+          TaskFlow helps team move
         </h1>
         <div className="text-3xl md:text-6xl bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4 p-2 rounded-md pb-4 w-fit">
           Work Forward.
@@ -43,10 +43,10 @@ const MarketingPage = () => {
       >
         Collaborate, Manage Projects, and reach new productivity peaks. From
         high rises to the home office, the way your team works unique -
-        accomplish it all with Trello.
+        accomplish it all with TaskFlow.
       </div>
       <Button className="mt-6" size="lg" asChild>
-        <Link href="/sign-up">Get Trello Free</Link>
+        <Link href="/sign-up">Get TaskFlow Free</Link>
       </Button>
     </div>
   );

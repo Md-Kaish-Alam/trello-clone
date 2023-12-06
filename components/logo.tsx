@@ -12,11 +12,11 @@ export const Logo = () => {
   return (
     <Link href="/">
       <div className="hover:opacity-75 transition items-center gap-x-2 hidden md:flex">
-        <Image src="/logo.svg" alt="logo" height={30} width={30} />
+        <Image src="/logo.svg" alt="logo" height={40} width={40} />
         <p
-          className={cn("text-lg text-neutral-700 mb-1", headingFont.className)}
+          className={cn("text-2xl text-neutral-700", headingFont.className)}
         >
-          Trello
+          TaskFlow
         </p>
       </div>
     </Link>

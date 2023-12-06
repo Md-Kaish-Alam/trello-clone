@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   icons: [
     {
-      url: '/logo.svg',
-      href: '/logo.svg',
-    }
-  ]
-}
+      url: "/favicon.ico",
+      href: "/favicon.ico",
+    },
+  ],
+};
 
 export default function RootLayout({
   children,
