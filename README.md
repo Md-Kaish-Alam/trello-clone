@@ -72,7 +72,7 @@ npm install npm@latest -g
 - **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/taskflow.git
+git clone https://github.com/Md-Kaish-Alam/trello-clone.git
 cd taskflow
 ```
 
