@@ -2,7 +2,7 @@
 
 TaskFlow is a sophisticated task management web application designed to help users manage their tasks efficiently within a collaborative environment. It offers a range of features from task organization to activity tracking, all wrapped in a user-friendly interface.
 
-**Try it out now: [LiveLens Live Demo](https://livelens-livestream-nextjs.vercel.app/)**
+**Try it out now: [TaskFlow Live Demo](https://task-managment-app-eta.vercel.app/)**
 
 ![landing page](https://github.com/Md-Kaish-Alam/trello-clone/assets/82415398/b1de2e08-8f7e-48a8-9766-252ce5dc1e33)
 
